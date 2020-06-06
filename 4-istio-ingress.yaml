@@ -1,0 +1,56 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: istio-system
+spec:
+  rules:
+    - host: grafana.{{CLUSTER_IP}}.nip.io
+      http:
+        paths:
+          - backend:
+             serviceName: grafana
+             servicePort: 3000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kiali
+  namespace: istio-system
+spec:
+  rules:
+    - host: kiali.{{CLUSTER_IP}}.nip.io
+      http:
+        paths:
+          - backend:
+             serviceName: kiali
+             servicePort: 20001
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jaeger
+  namespace: istio-system
+spec:
+  rules:
+    - host: jaeger.{{CLUSTER_IP}}.nip.io
+      http:
+        paths:
+          - backend:
+             serviceName: jaeger-query
+             servicePort: 16686
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apps-ingress
+  namespace: istio-system
+spec:
+  rules:
+    - host: "*.apps.{{CLUSTER_IP}}.nip.io"
+      http:
+        paths:
+          - backend:
+             serviceName: istio-ingressgateway
+             servicePort: 80
