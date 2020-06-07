@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dashboard
+  namespace: kubernetes-dashboard
+spec:
+  rules:
+    - host: dashboard.{{CLUSTER_IP}}.nip.io
+      http:
+        paths:
+          - backend:
+             serviceName: kubernetes-dashboard
+             servicePort: 9090
