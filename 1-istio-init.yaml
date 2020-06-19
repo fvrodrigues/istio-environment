@@ -1,3 +1,14 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  addonComponents:
+    tracing:
+      enabled: true
+  values:
+    global:
+      proxy:
+        tracer: "stackdriver"
+---
 apiVersion: v1
 kind: Namespace
 metadata:
