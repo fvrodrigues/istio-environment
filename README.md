@@ -50,11 +50,11 @@ Aguarde uns minutos até que todos os pods estejam em execução, voce pode acom
 
 Uma vez todos os serviços criados, você poderá acessa-los via endereços abaixo:
 
-- http://grafana.<IP DO SEU CLUSTER>.nip.io
+- http://grafana.{{IP_DO_SEU_CLUSTER}}.nip.io
 
-- http://kiali.<IP DO SEU CLUSTER>.nip.io
+- http://kiali.{{IP_DO_SEU_CLUSTER}}.nip.io
 
-- http://jaeger.<IP DO SEU CLUSTER>.nip.io
+- http://jaeger.{{IP_DO_SEU_CLUSTER}}.nip.io
 
 
 __Dica:__ Para saber o IP do seu Cluster, digite no terminal: ``minikube ip``
