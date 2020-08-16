@@ -6,7 +6,7 @@ metadata:
   namespace: istio-system
 spec:
   rules:
-    - host: grafana.{{CLUSTER_IP}}.nip.io
+    - host: grafana.172.17.0.3.nip.io
       http:
         paths:
           - backend:
@@ -20,7 +20,7 @@ metadata:
   namespace: istio-system
 spec:
   rules:
-    - host: kiali.{{CLUSTER_IP}}.nip.io
+    - host: kiali.172.17.0.3.nip.io
       http:
         paths:
           - backend:
@@ -34,7 +34,7 @@ metadata:
   namespace: istio-system
 spec:
   rules:
-    - host: jaeger.{{CLUSTER_IP}}.nip.io
+    - host: jaeger.172.17.0.3.nip.io
       http:
         paths:
           - backend:
@@ -48,7 +48,7 @@ metadata:
   namespace: istio-system
 spec:
   rules:
-    - host: "*.apps.{{CLUSTER_IP}}.nip.io"
+    - host: "*.apps.172.17.0.3.nip.io"
       http:
         paths:
           - backend:

@@ -5,7 +5,7 @@ metadata:
   namespace: kubernetes-dashboard
 spec:
   rules:
-    - host: dashboard.{{CLUSTER_IP}}.nip.io
+    - host: dashboard.172.17.0.3.nip.io
       http:
         paths:
           - backend:
